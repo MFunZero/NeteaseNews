@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="KGk-i7-Jjw" customClass="TextTableViewCell" customModule="NeteaseNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5X-hu-y1j" userLabel="topView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naB-fU-zeG">
+                                <rect key="frame" x="15" y="15" width="42" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-s8-9Nw" userLabel="bottomView">
+                        <rect key="frame" x="0.0" y="75" width="312" height="64"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Rd-Bv-BJ3" userLabel="left">
+                                <rect key="frame" x="-3" y="10" width="110" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-cm-KMX" userLabel="up" customClass="ClickTagView" customModule="NeteaseNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcm-4U-SsM" userLabel="down" customClass="ClickTagView" customModule="NeteaseNews" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="0.0" width="55" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="height" secondItem="tXw-cm-KMX" secondAttribute="height" id="3Va-uk-2ou"/>
+                                    <constraint firstItem="tXw-cm-KMX" firstAttribute="leading" secondItem="0Rd-Bv-BJ3" secondAttribute="leading" id="97I-XG-1UV"/>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="width" secondItem="tXw-cm-KMX" secondAttribute="width" id="E9r-Xr-ada"/>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="leading" secondItem="0Rd-Bv-BJ3" secondAttribute="leading" constant="55" id="FbK-lm-TVs"/>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="leading" secondItem="tXw-cm-KMX" secondAttribute="trailing" id="ZAF-gb-c6N"/>
+                                    <constraint firstItem="tXw-cm-KMX" firstAttribute="width" secondItem="0Rd-Bv-BJ3" secondAttribute="width" multiplier="1:2" id="ZAb-WV-BJn"/>
+                                    <constraint firstItem="tXw-cm-KMX" firstAttribute="height" secondItem="0Rd-Bv-BJ3" secondAttribute="height" id="dWY-mQ-7HZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="gJC-Lg-uYf"/>
+                                    <constraint firstItem="tXw-cm-KMX" firstAttribute="centerY" secondItem="0Rd-Bv-BJ3" secondAttribute="centerY" id="qNf-3n-W2E"/>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="centerY" secondItem="0Rd-Bv-BJ3" secondAttribute="centerY" id="tJj-ed-FCj"/>
+                                    <constraint firstItem="Tcm-4U-SsM" firstAttribute="leading" secondItem="tXw-cm-KMX" secondAttribute="trailing" id="tjm-y2-kUd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOm-sS-p55" userLabel="right">
+                                <rect key="frame" x="187" y="10" width="110" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGM-YR-HWQ" userLabel="message" customClass="ClickTagView" customModule="NeteaseNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h0s-oC-z6k">
+                                        <rect key="frame" x="66" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="vjd-4f-3R3"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="057-Kr-Pvc"/>
+                                    <constraint firstItem="tGM-YR-HWQ" firstAttribute="top" secondItem="ZOm-sS-p55" secondAttribute="top" id="AYH-2O-VBj"/>
+                                    <constraint firstAttribute="trailing" secondItem="h0s-oC-z6k" secondAttribute="trailing" id="BIQ-MX-9gG"/>
+                                    <constraint firstItem="tGM-YR-HWQ" firstAttribute="leading" secondItem="ZOm-sS-p55" secondAttribute="leading" id="Uoa-GV-rVQ"/>
+                                    <constraint firstItem="tGM-YR-HWQ" firstAttribute="height" secondItem="ZOm-sS-p55" secondAttribute="height" id="W8c-8l-TJD"/>
+                                    <constraint firstItem="h0s-oC-z6k" firstAttribute="height" secondItem="ZOm-sS-p55" secondAttribute="height" id="de8-TI-hfr"/>
+                                    <constraint firstItem="h0s-oC-z6k" firstAttribute="leading" secondItem="tGM-YR-HWQ" secondAttribute="trailing" id="pbv-kp-JKU"/>
+                                    <constraint firstItem="h0s-oC-z6k" firstAttribute="centerY" secondItem="ZOm-sS-p55" secondAttribute="centerY" id="xuJ-S8-pK2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Rd-Bv-BJ3" firstAttribute="width" secondItem="ZOm-sS-p55" secondAttribute="width" id="2wq-rh-0V0"/>
+                            <constraint firstItem="ZOm-sS-p55" firstAttribute="width" secondItem="tn1-s8-9Nw" secondAttribute="width" multiplier="1:3" constant="6" id="76N-zy-cfy"/>
+                            <constraint firstItem="ZOm-sS-p55" firstAttribute="centerY" secondItem="tn1-s8-9Nw" secondAttribute="centerY" id="EOW-V2-D92"/>
+                            <constraint firstAttribute="height" constant="64" id="FyI-Wk-Ly7"/>
+                            <constraint firstItem="0Rd-Bv-BJ3" firstAttribute="centerY" secondItem="tn1-s8-9Nw" secondAttribute="centerY" id="L3G-s0-a1E"/>
+                            <constraint firstItem="0Rd-Bv-BJ3" firstAttribute="leading" secondItem="tn1-s8-9Nw" secondAttribute="leading" constant="-3" id="Xvx-Cq-Yvf"/>
+                            <constraint firstAttribute="trailing" secondItem="ZOm-sS-p55" secondAttribute="trailing" constant="15" id="tkK-YO-gFR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tn1-s8-9Nw" secondAttribute="bottom" id="6gO-Ow-k66"/>
+                    <constraint firstItem="A5X-hu-y1j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Cgo-9r-bLU"/>
+                    <constraint firstItem="A5X-hu-y1j" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="EIf-N2-mo5"/>
+                    <constraint firstItem="A5X-hu-y1j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PXZ-kE-y3p"/>
+                    <constraint firstAttribute="trailing" secondItem="A5X-hu-y1j" secondAttribute="trailing" id="fk0-Lr-a2Y"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tn1-s8-9Nw" secondAttribute="trailing" id="ne9-cY-waI"/>
+                    <constraint firstItem="tn1-s8-9Nw" firstAttribute="top" secondItem="A5X-hu-y1j" secondAttribute="bottom" id="x7M-Eq-W6P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="232" y="238"/>
+        </tableViewCell>
+    </objects>
+</document>

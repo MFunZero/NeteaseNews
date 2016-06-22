@@ -12,6 +12,29 @@
 		2C11A7AD1D1425F9002CBEC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C11A7AB1D1425F9002CBEC2 /* Main.storyboard */; };
 		2C11A7AF1D1425F9002CBEC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C11A7AE1D1425F9002CBEC2 /* Assets.xcassets */; };
 		2C11A7B21D1425F9002CBEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C11A7B01D1425F9002CBEC2 /* LaunchScreen.storyboard */; };
+		2C11A7C01D142B76002CBEC2 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11A7BF1D142B76002CBEC2 /* Define.swift */; };
+		2CEFDC6D1D1775F200C0A97B /* ClickTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFDC6C1D1775F200C0A97B /* ClickTagView.swift */; };
+		2CEFDC6F1D17B31600C0A97B /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEFDC6E1D17B31600C0A97B /* TopicTableViewController.swift */; };
+		2CF01D871D162EF1002BC586 /* SinglePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D861D162EF1002BC586 /* SinglePhoto.swift */; };
+		2CF01D891D162F66002BC586 /* PhotoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D881D162F66002BC586 /* PhotoSet.swift */; };
+		2CF01D8B1D1631A0002BC586 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D8A1D1631A0002BC586 /* NewsItem.swift */; };
+		2CF01D8D1D163EBF002BC586 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF01D8C1D163EBF002BC586 /* SwiftyJSON.framework */; };
+		2CF01D911D16D6CF002BC586 /* PhotoSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D8F1D16D6CF002BC586 /* PhotoSetTableViewCell.swift */; };
+		2CF01D951D16D6F1002BC586 /* HotTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D931D16D6F1002BC586 /* HotTopicTableViewCell.swift */; };
+		2CF01D961D16D6F1002BC586 /* HotTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF01D941D16D6F1002BC586 /* HotTopicTableViewCell.xib */; };
+		2CF01D991D16D718002BC586 /* ADSPhotosetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D971D16D718002BC586 /* ADSPhotosetTableViewCell.swift */; };
+		2CF01D9A1D16D718002BC586 /* ADSPhotosetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF01D981D16D718002BC586 /* ADSPhotosetTableViewCell.xib */; };
+		2CF01D9D1D16D756002BC586 /* Exclusive_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D9B1D16D756002BC586 /* Exclusive_TableViewCell.swift */; };
+		2CF01D9E1D16D756002BC586 /* Exclusive_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF01D9C1D16D756002BC586 /* Exclusive_TableViewCell.xib */; };
+		2CF01DA11D16D7C1002BC586 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF01D9F1D16D7C1002BC586 /* TextTableViewCell.swift */; };
+		2CF01DA21D16D7C1002BC586 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF01DA01D16D7C1002BC586 /* TextTableViewCell.xib */; };
+		2CFFA60E1D14CFC10028FCA2 /* SwiftPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFA60D1D14CFC10028FCA2 /* SwiftPages.swift */; };
+		2CFFA6131D14D3B80028FCA2 /* HeadlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFA6121D14D3B80028FCA2 /* HeadlineTableViewController.swift */; };
+		2CFFA6151D14D67D0028FCA2 /* topic.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CFFA6141D14D67D0028FCA2 /* topic.json */; };
+		2CFFA6231D154D960028FCA2 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFA6221D154D960028FCA2 /* Topic.swift */; };
+		2CFFA6281D1585190028FCA2 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFA6271D1585190028FCA2 /* BaseTableViewController.swift */; };
+		2CFFA62A1D1589C20028FCA2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFFA6291D1589C20028FCA2 /* Alamofire.framework */; };
+		B74C9AD1F3A62A240CEF62A1 /* Pods_NeteaseNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF10AB1FAFE35BCF6606170 /* Pods_NeteaseNews.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +45,32 @@
 		2C11A7AE1D1425F9002CBEC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C11A7B11D1425F9002CBEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C11A7B31D1425F9002CBEC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C11A7BF1D142B76002CBEC2 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
+		2CEFDC6C1D1775F200C0A97B /* ClickTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickTagView.swift; sourceTree = "<group>"; };
+		2CEFDC6E1D17B31600C0A97B /* TopicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
+		2CF01D861D162EF1002BC586 /* SinglePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePhoto.swift; sourceTree = "<group>"; };
+		2CF01D881D162F66002BC586 /* PhotoSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSet.swift; sourceTree = "<group>"; };
+		2CF01D8A1D1631A0002BC586 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		2CF01D8C1D163EBF002BC586 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/NeteaseNews-egwgxgeybyfttkheqbrdwnkfrxyh/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		2CF01D8F1D16D6CF002BC586 /* PhotoSetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSetTableViewCell.swift; sourceTree = "<group>"; };
+		2CF01D931D16D6F1002BC586 /* HotTopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTopicTableViewCell.swift; sourceTree = "<group>"; };
+		2CF01D941D16D6F1002BC586 /* HotTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotTopicTableViewCell.xib; sourceTree = "<group>"; };
+		2CF01D971D16D718002BC586 /* ADSPhotosetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADSPhotosetTableViewCell.swift; sourceTree = "<group>"; };
+		2CF01D981D16D718002BC586 /* ADSPhotosetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADSPhotosetTableViewCell.xib; sourceTree = "<group>"; };
+		2CF01D9B1D16D756002BC586 /* Exclusive_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exclusive_TableViewCell.swift; sourceTree = "<group>"; };
+		2CF01D9C1D16D756002BC586 /* Exclusive_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exclusive_TableViewCell.xib; sourceTree = "<group>"; };
+		2CF01D9F1D16D7C1002BC586 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		2CF01DA01D16D7C1002BC586 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		2CFFA60D1D14CFC10028FCA2 /* SwiftPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPages.swift; sourceTree = "<group>"; };
+		2CFFA6121D14D3B80028FCA2 /* HeadlineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewController.swift; sourceTree = "<group>"; };
+		2CFFA6141D14D67D0028FCA2 /* topic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic.json; sourceTree = "<group>"; };
+		2CFFA6221D154D960028FCA2 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		2CFFA6241D154E990028FCA2 /* NeteaseNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeteaseNews-Bridging-Header.h"; sourceTree = "<group>"; };
+		2CFFA6271D1585190028FCA2 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		2CFFA6291D1589C20028FCA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/NeteaseNews-egwgxgeybyfttkheqbrdwnkfrxyh/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		3EF10AB1FAFE35BCF6606170 /* Pods_NeteaseNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeteaseNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7720E58266D4291FBBACA44D /* Pods-NeteaseNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseNews/Pods-NeteaseNews.debug.xcconfig"; sourceTree = "<group>"; };
+		FFCA8BED713C00CA8BD31994 /* Pods-NeteaseNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeteaseNews/Pods-NeteaseNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF01D8D1D163EBF002BC586 /* SwiftyJSON.framework in Frameworks */,
+				2CFFA62A1D1589C20028FCA2 /* Alamofire.framework in Frameworks */,
+				B74C9AD1F3A62A240CEF62A1 /* Pods_NeteaseNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +92,8 @@
 			children = (
 				2C11A7A61D1425F9002CBEC2 /* NeteaseNews */,
 				2C11A7A51D1425F9002CBEC2 /* Products */,
+				34CEE2F1F4B74A90ABE26E63 /* Pods */,
+				D5FBD36243B13D977FC2C016 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +108,110 @@
 		2C11A7A61D1425F9002CBEC2 /* NeteaseNews */ = {
 			isa = PBXGroup;
 			children = (
+				2CF01D8E1D16D6A0002BC586 /* View */,
+				2CFFA6111D14D3700028FCA2 /* Model */,
+				2CFFA6101D14D3630028FCA2 /* Controllers */,
+				2CFFA60F1D14CFDA0028FCA2 /* Resource */,
+				2C11A7BE1D142B69002CBEC2 /* Define */,
+				2C11A7B91D142607002CBEC2 /* Swift Pages */,
 				2C11A7A71D1425F9002CBEC2 /* AppDelegate.swift */,
 				2C11A7A91D1425F9002CBEC2 /* ViewController.swift */,
-				2C11A7AB1D1425F9002CBEC2 /* Main.storyboard */,
 				2C11A7AE1D1425F9002CBEC2 /* Assets.xcassets */,
 				2C11A7B01D1425F9002CBEC2 /* LaunchScreen.storyboard */,
 				2C11A7B31D1425F9002CBEC2 /* Info.plist */,
 			);
 			path = NeteaseNews;
+			sourceTree = "<group>";
+		};
+		2C11A7B91D142607002CBEC2 /* Swift Pages */ = {
+			isa = PBXGroup;
+			children = (
+				2CFFA60D1D14CFC10028FCA2 /* SwiftPages.swift */,
+			);
+			name = "Swift Pages";
+			sourceTree = "<group>";
+		};
+		2C11A7BE1D142B69002CBEC2 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				2C11A7BF1D142B76002CBEC2 /* Define.swift */,
+			);
+			name = Define;
+			sourceTree = "<group>";
+		};
+		2CEFDC6B1D17733900C0A97B /* SingleView */ = {
+			isa = PBXGroup;
+			children = (
+				2CEFDC6C1D1775F200C0A97B /* ClickTagView.swift */,
+			);
+			name = SingleView;
+			sourceTree = "<group>";
+		};
+		2CF01D8E1D16D6A0002BC586 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CEFDC6B1D17733900C0A97B /* SingleView */,
+				2CF01D8F1D16D6CF002BC586 /* PhotoSetTableViewCell.swift */,
+				2CF01D931D16D6F1002BC586 /* HotTopicTableViewCell.swift */,
+				2CF01D941D16D6F1002BC586 /* HotTopicTableViewCell.xib */,
+				2CF01D971D16D718002BC586 /* ADSPhotosetTableViewCell.swift */,
+				2CF01D981D16D718002BC586 /* ADSPhotosetTableViewCell.xib */,
+				2CF01D9B1D16D756002BC586 /* Exclusive_TableViewCell.swift */,
+				2CF01D9C1D16D756002BC586 /* Exclusive_TableViewCell.xib */,
+				2CF01D9F1D16D7C1002BC586 /* TextTableViewCell.swift */,
+				2CF01DA01D16D7C1002BC586 /* TextTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2CFFA60F1D14CFDA0028FCA2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2CFFA6241D154E990028FCA2 /* NeteaseNews-Bridging-Header.h */,
+				2CFFA6141D14D67D0028FCA2 /* topic.json */,
+				2C11A7AB1D1425F9002CBEC2 /* Main.storyboard */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		2CFFA6101D14D3630028FCA2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CFFA6121D14D3B80028FCA2 /* HeadlineTableViewController.swift */,
+				2CFFA6271D1585190028FCA2 /* BaseTableViewController.swift */,
+				2CEFDC6E1D17B31600C0A97B /* TopicTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2CFFA6111D14D3700028FCA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CFFA6221D154D960028FCA2 /* Topic.swift */,
+				2CF01D861D162EF1002BC586 /* SinglePhoto.swift */,
+				2CF01D881D162F66002BC586 /* PhotoSet.swift */,
+				2CF01D8A1D1631A0002BC586 /* NewsItem.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		34CEE2F1F4B74A90ABE26E63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7720E58266D4291FBBACA44D /* Pods-NeteaseNews.debug.xcconfig */,
+				FFCA8BED713C00CA8BD31994 /* Pods-NeteaseNews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D5FBD36243B13D977FC2C016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CF01D8C1D163EBF002BC586 /* SwiftyJSON.framework */,
+				2CFFA6291D1589C20028FCA2 /* Alamofire.framework */,
+				3EF10AB1FAFE35BCF6606170 /* Pods_NeteaseNews.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C11A7B61D1425F9002CBEC2 /* Build configuration list for PBXNativeTarget "NeteaseNews" */;
 			buildPhases = (
+				16333EE1B5B9969B1867A204 /* 📦 Check Pods Manifest.lock */,
 				2C11A7A01D1425F9002CBEC2 /* Sources */,
 				2C11A7A11D1425F9002CBEC2 /* Frameworks */,
 				2C11A7A21D1425F9002CBEC2 /* Resources */,
+				40B2E3FFD78A6E7E1CF75AA4 /* 📦 Embed Pods Frameworks */,
+				AC4D045BADF7212E0D86EF74 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,20 +276,88 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF01D9A1D16D718002BC586 /* ADSPhotosetTableViewCell.xib in Resources */,
 				2C11A7B21D1425F9002CBEC2 /* LaunchScreen.storyboard in Resources */,
+				2CFFA6151D14D67D0028FCA2 /* topic.json in Resources */,
 				2C11A7AF1D1425F9002CBEC2 /* Assets.xcassets in Resources */,
 				2C11A7AD1D1425F9002CBEC2 /* Main.storyboard in Resources */,
+				2CF01D961D16D6F1002BC586 /* HotTopicTableViewCell.xib in Resources */,
+				2CF01D9E1D16D756002BC586 /* Exclusive_TableViewCell.xib in Resources */,
+				2CF01DA21D16D7C1002BC586 /* TextTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16333EE1B5B9969B1867A204 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40B2E3FFD78A6E7E1CF75AA4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseNews/Pods-NeteaseNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC4D045BADF7212E0D86EF74 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeteaseNews/Pods-NeteaseNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C11A7A01D1425F9002CBEC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CFFA6231D154D960028FCA2 /* Topic.swift in Sources */,
+				2CFFA6281D1585190028FCA2 /* BaseTableViewController.swift in Sources */,
+				2CF01D951D16D6F1002BC586 /* HotTopicTableViewCell.swift in Sources */,
+				2CF01D991D16D718002BC586 /* ADSPhotosetTableViewCell.swift in Sources */,
+				2CF01D891D162F66002BC586 /* PhotoSet.swift in Sources */,
+				2CF01D8B1D1631A0002BC586 /* NewsItem.swift in Sources */,
+				2CEFDC6D1D1775F200C0A97B /* ClickTagView.swift in Sources */,
+				2CF01D911D16D6CF002BC586 /* PhotoSetTableViewCell.swift in Sources */,
+				2CFFA60E1D14CFC10028FCA2 /* SwiftPages.swift in Sources */,
 				2C11A7AA1D1425F9002CBEC2 /* ViewController.swift in Sources */,
+				2CF01DA11D16D7C1002BC586 /* TextTableViewCell.swift in Sources */,
+				2CF01D9D1D16D756002BC586 /* Exclusive_TableViewCell.swift in Sources */,
+				2C11A7C01D142B76002CBEC2 /* Define.swift in Sources */,
+				2CEFDC6F1D17B31600C0A97B /* TopicTableViewController.swift in Sources */,
+				2CFFA6131D14D3B80028FCA2 /* HeadlineTableViewController.swift in Sources */,
+				2CF01D871D162EF1002BC586 /* SinglePhoto.swift in Sources */,
 				2C11A7A81D1425F9002CBEC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,23 +469,35 @@
 		};
 		2C11A7B71D1425F9002CBEC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7720E58266D4291FBBACA44D /* Pods-NeteaseNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NeteaseNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoa.NeteaseNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/fanzz/Documents/GCDWorkspace/NeteaseNews/NeteaseNews/NeteaseNews-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		2C11A7B81D1425F9002CBEC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFCA8BED713C00CA8BD31994 /* Pods-NeteaseNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NeteaseNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocoa.NeteaseNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/fanzz/Documents/GCDWorkspace/NeteaseNews/NeteaseNews/NeteaseNews-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -287,6 +520,7 @@
 				2C11A7B81D1425F9002CBEC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

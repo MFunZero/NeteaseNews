@@ -1,0 +1,16 @@
+//
+//  Channel.swift
+//  NeteaseNews
+//
+//  Created by fanzz on 16/6/18.
+//  Copyright © 2016年 fanzz. All rights reserved.
+//
+
+import UIKit
+
+class Topic: NSObject {
+
+    var tid:String?
+    var tname:String?
+    var tUrl:String?
+}
