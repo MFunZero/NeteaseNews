@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="inT-mb-Daw">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--网易-->
+        <scene sceneID="tHP-D9-cie">
+            <objects>
+                <viewController id="VT9-E6-veb" customClass="ViewController" customModule="NeteaseNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ed0-1Z-YcV"/>
+                        <viewControllerLayoutGuide type="bottom" id="7hg-IX-iZx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IHB-VQ-sVg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khl-0E-g03" customClass="SwiftPages" customModule="NeteaseNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Khl-0E-g03" firstAttribute="top" secondItem="ed0-1Z-YcV" secondAttribute="bottom" id="dEP-z4-GgP"/>
+                            <constraint firstItem="7hg-IX-iZx" firstAttribute="top" secondItem="Khl-0E-g03" secondAttribute="bottom" id="eBU-wa-v7p"/>
+                            <constraint firstAttribute="trailing" secondItem="Khl-0E-g03" secondAttribute="trailing" id="hXY-j3-lJA"/>
+                            <constraint firstItem="Khl-0E-g03" firstAttribute="leading" secondItem="IHB-VQ-sVg" secondAttribute="leading" id="wlB-ce-5wq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="网易" id="dBM-Vc-ifn"/>
+                    <connections>
+                        <outlet property="swiftPagesView" destination="Khl-0E-g03" id="1ji-tq-nJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foS-ea-ubz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="204"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3iq-Pp-qHL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="inT-mb-Daw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="382-zk-u7f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VT9-E6-veb" kind="relationship" relationship="rootViewController" id="xqB-Yh-9KE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cla-Dj-5yO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="204"/>
+        </scene>
+    </scenes>
+</document>

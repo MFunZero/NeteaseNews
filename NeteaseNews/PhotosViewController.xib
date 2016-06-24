@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotosViewController" customModule="NeteaseNews" customModuleProvider="target">
+            <connections>
+                <outlet property="currentPageLabel" destination="96H-w9-lUZ" id="rwB-lz-NnN"/>
+                <outlet property="effectView" destination="iwT-dY-73U" id="YPm-2y-ZZ9"/>
+                <outlet property="scrollView" destination="LEE-lj-ViZ" id="Gzy-lX-EbR"/>
+                <outlet property="textcontentLabel" destination="fGH-pa-ZLD" id="Nhz-0c-0bp"/>
+                <outlet property="titleLabel" destination="DTY-lv-hCP" id="a7S-3H-U5M"/>
+                <outlet property="totalCount" destination="VXi-vu-DQl" id="x9a-uQ-Uhh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEE-lj-ViZ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </scrollView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-dY-73U">
+                    <rect key="frame" x="0.0" y="448" width="320" height="120"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zBp-X8-S93">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-pa-ZLD">
+                                <rect key="frame" x="15" y="33" width="290" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-vu-DQl">
+                                <rect key="frame" x="292" y="8" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="4tY-7Y-thY"/>
+                                    <constraint firstAttribute="height" constant="20" id="fTb-F4-bUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTY-lv-hCP" userLabel="titleLabel">
+                                <rect key="frame" x="15" y="5" width="256" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96H-w9-lUZ">
+                                <rect key="frame" x="267" y="6" width="25" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2zO-J7-d4O"/>
+                                    <constraint firstAttribute="width" constant="25" id="weU-vW-huj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fGH-pa-ZLD" firstAttribute="height" secondItem="zBp-X8-S93" secondAttribute="height" multiplier="0.6" id="BPM-lK-qlV"/>
+                            <constraint firstItem="96H-w9-lUZ" firstAttribute="top" secondItem="zBp-X8-S93" secondAttribute="top" constant="6" id="UXZ-4a-bZM"/>
+                            <constraint firstItem="fGH-pa-ZLD" firstAttribute="leading" secondItem="zBp-X8-S93" secondAttribute="leading" constant="15" id="VMA-60-H91"/>
+                            <constraint firstItem="DTY-lv-hCP" firstAttribute="top" secondItem="zBp-X8-S93" secondAttribute="top" constant="5" id="WZR-S8-whM"/>
+                            <constraint firstAttribute="bottom" secondItem="fGH-pa-ZLD" secondAttribute="bottom" constant="15" id="bHO-kj-BwR"/>
+                            <constraint firstItem="VXi-vu-DQl" firstAttribute="top" secondItem="zBp-X8-S93" secondAttribute="top" constant="8" id="iw6-TG-MWF"/>
+                            <constraint firstItem="fGH-pa-ZLD" firstAttribute="top" secondItem="DTY-lv-hCP" secondAttribute="bottom" id="lCm-FW-dxs"/>
+                            <constraint firstItem="VXi-vu-DQl" firstAttribute="leading" secondItem="96H-w9-lUZ" secondAttribute="trailing" id="n2j-eX-QZo"/>
+                            <constraint firstAttribute="trailing" secondItem="fGH-pa-ZLD" secondAttribute="trailing" constant="15" id="qEL-Pt-Hac"/>
+                            <constraint firstItem="DTY-lv-hCP" firstAttribute="leading" secondItem="zBp-X8-S93" secondAttribute="leading" constant="15" id="rEH-ey-J2T"/>
+                            <constraint firstAttribute="trailing" secondItem="VXi-vu-DQl" secondAttribute="trailing" constant="8" id="tca-yi-gBY"/>
+                            <constraint firstItem="DTY-lv-hCP" firstAttribute="width" secondItem="zBp-X8-S93" secondAttribute="width" multiplier="0.8" id="ur5-nY-agi"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="Fk1-qf-vNe"/>
+                    </constraints>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LEE-lj-ViZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4yw-Yt-EL3"/>
+                <constraint firstItem="LEE-lj-ViZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="6Jh-N9-xbs"/>
+                <constraint firstAttribute="bottom" secondItem="LEE-lj-ViZ" secondAttribute="bottom" id="Hx0-P5-rep"/>
+                <constraint firstItem="LEE-lj-ViZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LDK-7m-Tda"/>
+                <constraint firstAttribute="bottom" secondItem="iwT-dY-73U" secondAttribute="bottom" id="V8B-f3-Mu1"/>
+                <constraint firstItem="LEE-lj-ViZ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="XLL-YD-06S"/>
+                <constraint firstAttribute="trailing" secondItem="LEE-lj-ViZ" secondAttribute="trailing" id="a3X-Ep-qz8"/>
+                <constraint firstItem="iwT-dY-73U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dhf-I5-RGD"/>
+                <constraint firstAttribute="trailing" secondItem="iwT-dY-73U" secondAttribute="trailing" id="yBb-d8-fSF"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

@@ -35,4 +35,6 @@ class PhotoSet: NSObject {
      var tag : String?
      var template : String?
      var title : String?
+    var imgextra:NSArray?
+
 }

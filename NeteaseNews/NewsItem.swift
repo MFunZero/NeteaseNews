@@ -39,6 +39,8 @@ class NewsItem: NSObject {
     
     var recReason:String?
     var url_3w:String?
+    var url:String?
+
     var postid:String?
     var hasCover:Bool?
     var hasHead:String?

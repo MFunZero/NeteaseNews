@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class PhotoSetTableViewCell: UITableViewCell ,UIScrollViewDelegate{
     
     
@@ -19,6 +21,17 @@ class PhotoSetTableViewCell: UITableViewCell ,UIScrollViewDelegate{
                 textContent.text = item.title
                 
 //                self.setNeedsDisplay()
+            }else if let extra = newsItem!.imgextra{
+                
+                    self.images = extra
+                    let item = SinglePhoto.mj_objectWithKeyValues(images[0])
+                    textContent.text = item.title
+                
+            }else{
+                let item = SinglePhoto.mj_objectWithKeyValues(newsItem)
+                self.images = [item]
+                textContent.text = item.title
+
             }
         }
     }
@@ -71,14 +84,15 @@ class PhotoSetTableViewCell: UITableViewCell ,UIScrollViewDelegate{
         self.addSubview(bottomView)
         bottomView.backgroundColor = UIColor.clearColor()
         
-        self.pagecontroll.frame = CGRectMake(screenSize.width-60, photoSetSizeHeight-photoSetSizeHeight/12 - 10, 40, 20)
+        self.pagecontroll.frame = CGRectMake(screenSize.width-60, photoSetSizeHeight-photoSetSizeHeight/12 - 10, 30, 20)
         self.pagecontroll.currentPageIndicatorTintColor = UIColor.redColor()
         
         self.pagecontroll.pageIndicatorTintColor = UIColor.whiteColor()
         self.pagecontroll.currentPage = 0
         self.pagecontroll.numberOfPages = self.images.count
+        if self.images.count > 1 {
         self.addSubview(self.pagecontroll)
-        
+        }
         let blurEffect: UIBlurEffect = UIBlurEffect(style: .Light)
         self.blurView = UIVisualEffectView(effect: blurEffect)
         
@@ -88,15 +102,21 @@ class PhotoSetTableViewCell: UITableViewCell ,UIScrollViewDelegate{
         self.bottomView.addSubview(self.blurView)
         
         
-        textContent.frame = CGRect(x: 20, y: 0, width: bottomView.frame.width - pagecontroll.frame.width - 50, height: bottomView.frame.height)
+        textContent.frame = CGRect(x: 40, y: 0, width: bottomView.frame.width - pagecontroll.frame.width - 65, height: bottomView.frame.height)
         self.bottomView.addSubview(textContent)
         
-        self.textContent.adjustsFontSizeToFitWidth = true
+        self.textContent.font = UIFont(name: "Arial", size: 13)
         
-        tagImageView.frame = CGRect(x: 0, y: 0, width: photoSetSizeHeight/6, height: photoSetSizeHeight/6)
-        tagImageView.image = UIImage(named: "cm2_skin_icn_new")
+        tagImageView.frame = CGRect(x: 0, y: -5, width: 40, height: photoSetSizeHeight/6+5)
+        tagImageView.image = UIImage(named: "head_news_cell_category_background")
         self.bottomView.addSubview(tagImageView)
         
+        let subLabel = UILabel(frame: CGRect(x: 0, y:photoSetSizeHeight/24+5, width: tagImageView.frame.width, height: photoSetSizeHeight/12))
+        self.tagImageView.addSubview(subLabel)
+        subLabel.text = "图集"
+        subLabel.textAlignment = .Center
+        subLabel.textColor = UIColor.whiteColor()
+        subLabel.font = UIFont(name: "Arial", size: 12)
         self.addTimer()
         
     }

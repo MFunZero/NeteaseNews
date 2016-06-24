@@ -14,22 +14,18 @@ class HotTopicTableViewCell: UITableViewCell {
         didSet{
             rightLabel.layer.cornerRadius = 30
             
-            
-            titleLabel.numberOfLines = 0
+            titleLabel.numberOfLines = 2
             titleLabel.lineBreakMode = .ByCharWrapping
             titleLabel.font = UIFont.systemFontOfSize(14)
             //根据detailText文字长度调节topView高度
-            let constraint = CGSize(width: titleLabel.frame.size.width,height: 100.0)
-            let title = news!.title
-            let size = title!.boundingRectWithSize(constraint, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: NSDictionary(object:UIFont.systemFontOfSize(14), forKey: NSFontAttributeName) as? [String : AnyObject] ,context: nil)
-            
-            titleLabel.frame = CGRectMake(titleLabel.frame.origin.x, titleLabel.frame.origin.y,size.width, size.height);//保持原来Label的位置和宽度，只是改变高度。
-            titleLabel.text = title
+
+            titleLabel.text = news?.title
             leftLabel.text = news?.interest
             
+            rightLabel.layer.cornerRadius = 3.0
+            rightLabel.clipsToBounds = true
             if let data = NSData(contentsOfURL: NSURL(string: (news?.imgsrc)!)!) {
                 imageV.image = UIImage(data: data,scale:1.5)
-                imageV.frame.origin = CGPoint(x:0,y:0);
                 imageV.contentMode = UIViewContentMode.ScaleAspectFit
             }
         }
@@ -50,6 +46,8 @@ class HotTopicTableViewCell: UITableViewCell {
    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
+        
+        
         
         if let str = news!.replyCount {
             setRight("\(str)跟帖")

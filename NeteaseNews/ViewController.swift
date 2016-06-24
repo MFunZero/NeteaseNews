@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,SelectCellDelegate{
     
     var topics:[Topic] = [Topic]()
     var controllers:[AnyObject] = [AnyObject]()
@@ -39,7 +39,9 @@ class ViewController: UIViewController {
         // Sample customization
        
         for item in self.topics {
-            controllers.append(BaseTableViewController(topic: item))
+            let vc = BaseTableViewController(topic: item)
+            vc.delegate = self
+            controllers.append(vc)
             buttonsTitles.append(item.tname!)
         }
       
@@ -48,8 +50,35 @@ class ViewController: UIViewController {
         swiftPagesView.setButtonsTextColor(UIColor.blackColor())
         swiftPagesView.setBarButtonsCountInScreen(4)
         swiftPagesView.setAnimatedBarColor(UIColor.redColor())
-//        swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
+
         
+        
+    }
+    func didSelectedCell(item: NewsItem,type:NewsType) {
+        switch type {
+        case .ADS:
+            let vc = BaseSingleNewsViewController()
+            vc.newsItem = item
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .Mix:
+
+            let vc = BaseSingleNewsViewController()
+            vc.newsItem = item
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        case .PhoteSet:
+
+            let vc = PhotosViewController()
+            vc.newsItem = item
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        case .Text:
+
+            let vc = BaseSingleNewsViewController()
+            vc.newsItem = item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

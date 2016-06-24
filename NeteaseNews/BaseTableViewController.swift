@@ -11,12 +11,25 @@ import Alamofire
 import SwiftyJSON
 import MJRefresh
 
+enum NewsType {
+    case PhoteSet,Text,Mix,ADS
+}
+
+protocol SelectCellDelegate {
+    func didSelectedCell(item:NewsItem,type:NewsType)
+}
+
+
+
 private let photoSetCellIdentifier = "photoSetCellIdentifier"
 private let hotTopicCellIdentifier = "hotTopicCellIdentifier"
-
+private let skipPhotosetCellIdentifier = "skipPhotosetTableViewCell"
 class BaseTableViewController: UITableViewController {
     
-    var dictArray:[AnyObject] = [AnyObject]()
+    var delegate:SelectCellDelegate?
+    
+    
+    var dictArray:[NewsItem] = [NewsItem]()
     var pageSize:Int = 10
     var pageStart:Int = 0
     
@@ -39,7 +52,7 @@ class BaseTableViewController: UITableViewController {
     func requestDataByTopic(top:Topic) {
         var urlString = appApi
         if top.tid == "T1348647853363" {
-            urlString = urlString.stringByAppendingString( headlinePrefixUrl.stringByAppendingString("T1348647853363/0-10.html?")).stringByAppendingString(subfixUrl)
+            urlString = urlString.stringByAppendingString( headlinePrefixUrl.stringByAppendingString("T1348647853363/0-10.html"))
             //            \(start)-\(end)
         }else{
             let id = "\(top.tid!)"
@@ -56,21 +69,27 @@ class BaseTableViewController: UITableViewController {
                         //遍历数组得到每一个字典模型
                         let array = items[top.tid!] as! NSArray
                         print("items:\(array)")
-//                        let items = NewsItem.mj_objectArrayWithKeyValuesArray(array)
+                        var news = [NewsItem]()
                         
-                        
+                        var c = 0
                         for item in array {
                             let newsItems = NewsItem.mj_objectWithKeyValues(item)
                             
-                            print("newsiii:\(newsItems),count:\(array.count)")
-                            self.dictArray.append(newsItems)
-                            
+                            print("newslll\(c):\(newsItems.title),count:\(array.count)")
+                            news.append(newsItems)
+                            c+=1
                         }
+                        
+                        self.dictArray = news
+                        print("dictArray:\(self.dictArray)")
+
                         self.tableView.reloadData()
                         self.tableView.mj_header.endRefreshing()
                     }
                 case .Failure(let error):
                     print(error)
+                    self.tableView.mj_header.endRefreshing()
+
                 }
         }
     }
@@ -81,7 +100,7 @@ class BaseTableViewController: UITableViewController {
         let start = pageStart * pageSize
         let end = start + pageSize
         if top.tid == "T1348647853363" {
-            urlString = urlString.stringByAppendingString( headlinePrefixUrl.stringByAppendingString("T1348647853363/\(start)-\(end).html?")).stringByAppendingString(subfixUrl)
+            urlString = urlString.stringByAppendingString( headlinePrefixUrl.stringByAppendingString("T1348647853363/\(start)-\(end).html"))
             //            \(start)-\(end)
         }else{
             let id = "\(top.tid!)"
@@ -91,7 +110,9 @@ class BaseTableViewController: UITableViewController {
         Alamofire.request(.GET, urlString, parameters: nil)
             .responseJSON { response in
                 print(response.request)
+                
                 switch response.result {
+                    
                 case .Success:
                     //把得到的JSON数据转为数组
                     if let items = response.result.value as? NSDictionary{
@@ -99,36 +120,46 @@ class BaseTableViewController: UITableViewController {
                         let array = items[top.tid!] as! NSArray
                         print("items:\(array)")
                         
-//                        let pset = PhotoSet.mj_objectWithKeyValues(newsItems[0])
-                        
                         let start = self.dictArray.count
+                        var new = [NewsItem]()
+                        
+                        var c = 0
                         for item in array {
+                            if c != 0 {
+                        
+                
                             let newsItems = NewsItem.mj_objectWithKeyValues(item)
-
-                            print("newsiii:\(newsItems.title),count:\(array.count)")
-                            self.dictArray.append(newsItems)
-
+                            
+                            print("newsiii:\(newsItems.title),count:\(self.dictArray.count)")
+                            new.append(newsItems)
+                            }
+                            c+=1
                         }
-                        var count = 0
-                        for index in self.dictArray {
-                            print("count\(count):::\((index as! NewsItem).title)")
-                            count += 1
+                        self.dictArray.appendContentsOf(new)
+                        
+                        
+                        print("dictArrayLoadMore:\(new)")
+//                        self.tableView.reloadData()
+                        self.tableView.beginUpdates()
+                        
+                        var indexPaths = [NSIndexPath]()
+                        for i in start ..< self.dictArray.count {
+                            let indexPath = NSIndexPath(forRow:i , inSection: 0)
+                            indexPaths.append(indexPath)
                         }
-                        self.tableView.reloadData()
-//                        self.tableView.beginUpdates()
-//                        
-//                        var indexPaths = [NSIndexPath]()
-//                        for i in start ..< self.dictArray.count {
-//                            let indexPath = NSIndexPath(forRow:i , inSection: 0)
-//                            indexPaths.append(indexPath)
-//                        }
-//                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-//                        
-//                        self.tableView.endUpdates()
+                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+                        
+                        self.tableView.endUpdates()
                         self.tableView.mj_footer.endRefreshing()
                     }
                 case .Failure(let error):
-                    print(error)
+                    print("error:\(error)")
+                    self.tableView.mj_footer.endRefreshing()
+                    let nowifiView = UIImageView(frame: self.tableView.frame)
+                    self.tableView.addSubview(nowifiView)
+                    nowifiView.center = self.tableView.center
+                    nowifiView.image = UIImage(named: "publicWiFi_banner_icon_not_connected")
+                    
                 }
         }
     }
@@ -139,9 +170,9 @@ class BaseTableViewController: UITableViewController {
         self.tableView.autoresizingMask = .FlexibleHeight
         
         if self.dictArray.count == 0 {
-        let header:MJRefreshNormalHeader = MJRefreshNormalHeader(refreshingBlock: { [unowned self]() -> Void in
-            self.requestDataByTopic(self.topic)
-            })
+            let header:MJRefreshNormalHeader = MJRefreshNormalHeader(refreshingBlock: { [unowned self]() -> Void in
+                self.requestDataByTopic(self.topic)
+                })
             self.tableView.mj_header = header
             
             header.setTitle("推荐中", forState: .Refreshing)
@@ -150,17 +181,17 @@ class BaseTableViewController: UITableViewController {
             
             self.tableView.mj_header.beginRefreshing()
             
-
+            
         }
         
         
-      
-
+        
+        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         self.tableView.registerClass(PhotoSetTableViewCell.self, forCellReuseIdentifier: photoSetCellIdentifier)
         self.tableView.registerNib(UINib(nibName: "HotTopicTableViewCell",bundle: nil), forCellReuseIdentifier: hotTopicCellIdentifier)
         
-        
+        self.tableView.registerNib(UINib(nibName: "SkipPhotosetTableViewCell",bundle: nil), forCellReuseIdentifier: skipPhotosetCellIdentifier)
         setupRefresh()
         
     }
@@ -192,79 +223,56 @@ class BaseTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let item = self.dictArray[indexPath.row] as! NewsItem
-        print("hashead111:\(item.hasHead)")
-        if item.hasHead == "1" {
+        let item = self.dictArray[indexPath.row]
+        if item.ads != nil {
             let cell = tableView.dequeueReusableCellWithIdentifier(photoSetCellIdentifier, forIndexPath: indexPath) as! PhotoSetTableViewCell
             
             cell.newsItem = PhotoSet.mj_objectWithKeyValues(item)
-            cell.textLabel?.text = "\(indexPath.row)::\(cell.newsItem?.title)"
             return cell
-        }else {
+        }else  if item.skipType == "photoset" {
+            let cell = tableView.dequeueReusableCellWithIdentifier(skipPhotosetCellIdentifier, forIndexPath: indexPath) as! SkipPhotosetTableViewCell
+            cell.newsItem = item
+            cell.selectionStyle = UITableViewCellSelectionStyle.Gray
+            print("urlCell:\(item.url)")
+            return cell
+        }else{
             
             let cell = tableView.dequeueReusableCellWithIdentifier(hotTopicCellIdentifier, forIndexPath: indexPath) as! HotTopicTableViewCell
             cell.news = item
-//            cell.textLabel?.text = "\(indexPath.row)::\(cell.news?.title)"
-
-            
+            cell.selectionStyle = UITableViewCellSelectionStyle.Gray
+            print("urlCell:\(item.url)")
             return cell
+            
+        }
+    }
+    
+    override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = self.dictArray[indexPath.row]
+        if item.ads != nil {
+            print("didSelect:\(item.url)")
+            self.delegate!.didSelectedCell(item,type: NewsType.Text)
+        }else if item.skipType == "photoset" {
+            self.delegate!.didSelectedCell(item,type: NewsType.PhoteSet)
+        }else{
+            self.delegate!.didSelectedCell(item,type: NewsType.Text)
+        }
+        //        self.presentViewController(vc, animated: true, completion: nil)
         
     }
-}
-
-override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    let item = self.dictArray[indexPath.row] as! NewsItem
-    print("hashead111:\(item.hasHead)")
-    if item.hasHead == "1" {
-        return photoSetSizeHeight
-    }else {
-        return 100
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let item = self.dictArray[indexPath.row]
+        print("hashead111:\(item.hasHead)")
+        if item.ads != nil {
+            return photoSetSizeHeight
+        }else  if item.skipType == "photoset" {
+            return photoSetSizeHeight
+        }else{
+            
+            return photoSetSizeHeight/2
+            
+        }
     }
-}
-
-/*
- // Override to support conditional editing of the table view.
- override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
- // Return false if you do not want the specified item to be editable.
- return true
- }
- */
-
-/*
- // Override to support editing the table view.
- override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
- if editingStyle == .Delete {
- // Delete the row from the data source
- tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
- } else if editingStyle == .Insert {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
- 
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
- // Return false if you do not want the item to be re-orderable.
- return true
- }
- */
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
-
+    
+    
 }
