@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (3.3.1)
+  - MJExtension (3.0.10)
+  - MJRefresh (3.1.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SwiftyJSON (2.3.2)
+  - YLProgressBar (3.8.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - MJExtension
+  - MJRefresh
+  - SDWebImage
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - YLProgressBar
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  YLProgressBar: c6699d75d58042377132c9301d3ab8fd0204937d
+
+PODFILE CHECKSUM: f43e3d9043ca5840962e78dedb158fcfe5866fb9
+
+COCOAPODS: 1.0.0.beta.8
